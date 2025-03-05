@@ -1,78 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
 body {
-    background-color: black; /* Start with a black background */
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background: black;
     color: white;
-    font-family: Arial, sans-serif;
-}
-
-.screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Inter', sans-serif;
     text-align: center;
 }
 
-.hidden {
+#start, #content, #messageSection {
     display: none;
 }
 
-#start-message {
-    font-size: 36px;
-    color: white;
+img {
+    max-width: 80%;
+    border-radius: 10px;
 }
 
-.background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-}
-
-#birthday-message {
-    font-size: 36px;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-#photo {
+button {
     margin-top: 20px;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-#next-button, #cute-message-button {
-    margin-top: 20px;
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
     padding: 10px 20px;
+    font-size: 18px;
     cursor: pointer;
-    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background: pink;
+    color: black;
 }
-
-.birthday-cake {
-    position: relative; 
-    top: 20px;
-}
-
-/* Include your cake styles here */
-.holder {
-    position: absolute;
-    width: 350px;
-    height: 20px;
-    border-radius: 100px;
-    background-color: #212F3C;
-    left: -140px;
-    top: 10px;  
-}
-
-/* Add the rest of your cake styles here... */
