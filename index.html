@@ -3,40 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Surprise</title>
+    <title>Happy Birthday</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="startScreen" class="start-screen">
-        <p>Tap to Start</p>
+
+    <!-- Start Screen -->
+    <div class="start-screen" onclick="startBirthday()">
+        Tap to Start
     </div>
 
-    <div id="mainContent" class="hidden">
-        <div class="birthday-bg">
-            <img src="photo.png" alt="Birthday Photo" class="birthday-photo">
-        </div>
-        <h1 id="birthdayText" class="typewriter">🎂 Happy Birthday Meri Jaan 🎂</h1>
+    <!-- Main Content (Hidden Initially) -->
+    <div class="hidden birthday-content">
         
+        <!-- Photo and Typewriter Text -->
+        <div class="birthday-bg">
+            <img src="photo.jpg" class="birthday-photo" alt="Birthday">
+            <p class="typewriter" id="birthday-text">Happy Birthday Meri Jaan! 🎉🎂</p>
+        </div>
+
+        <!-- Cake Section -->
         <div class="birthday-cake">
             <div class="holder"></div>
             <div class="shadow"></div>
             <div class="cake">
                 <div class="chocolate"></div>
+                <div class="candle"></div>
+                <div class="flame"></div>
             </div>
-            <div class="candle"></div>
-            <div class="flame"></div>
         </div>
+
+        <!-- Buttons for Interaction -->
+        <button id="light-candle" onclick="lightCandle()">Light Candle</button>
+        <button id="cut-cake" class="hidden" onclick="cutCake()">Cut Cake</button>
+        
     </div>
 
-    <audio id="music" src="music1.mp3"></audio>
+    <!-- Background Music -->
+    <audio id="bg-music" src="music1.mp3" loop></audio>
+    <audio id="hbd-music" src="hbd.mp3"></audio>
+
     <script>
-        document.getElementById("startScreen").addEventListener("click", function() {
-            this.style.display = "none";
-            document.getElementById("mainContent").classList.remove("hidden");
-            document.getElementById("music").play();
-            document.body.style.backgroundImage = "url('background.jpg')";
-            document.body.style.backgroundSize = "cover";
-        });
+        function startBirthday() {
+            document.querySelector('.start-screen').classList.add('hidden');
+            document.querySelector('.birthday-content').classList.remove('hidden');
+            document.getElementById('bg-music').play();
+        }
+
+        function lightCandle() {
+            document.querySelector('.flame').style.display = 'block';
+            document.getElementById('light-candle').style.display = 'none';
+            document.getElementById('cut-cake').classList.remove('hidden');
+        }
+
+        function cutCake() {
+            document.querySelector('.flame').style.display = 'none';
+            document.getElementById('bg-music').pause();
+            document.getElementById('hbd-music').play();
+        }
     </script>
+
 </body>
 </html>
