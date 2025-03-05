@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Meri Jaan</title>
+    <title>Happy Birthday!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="tapScreen" onclick="startApp()">
-        <h1>Tap to Begin</h1>
+    <!-- Tap to Begin -->
+    <div id="tapToBegin">Tap to Begin</div>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+        <h1 id="message"></h1>
+        <img id="photo" src="assets/photo.jpg" alt="Birthday Photo">
+        <button id="next1">Next</button>
     </div>
-    
-    <div id="start">
-        <h1>Happy Birthday Meri Jaan</h1>
-        <img src="assets/photo.jpg" alt="Photo">
-        <button onclick="showContent()">Next</button>
+
+    <!-- Cake Section -->
+    <div id="cakeSection">
+        <p>Here's a special cake for you!</p>
+        <img id="cake" src="assets/cake.gif" alt="Cake">
+        <button id="next2">Next</button>
     </div>
-    
-    <div id="content">
-        <h2>A special message just for you ❤️</h2>
-        <img src="assets/cake.gif" alt="Cake">
-        <button onclick="showMessage()">Next</button>
+
+    <!-- Audio Message Section -->
+    <div id="audioSection">
+        <p>A cute audio message for you!</p>
+        <button id="playMessage">Play</button>
+        <audio id="messageAudio" src="assets/message.mp3"></audio>
     </div>
-    
-    <div id="messageSection">
-        <h2>A Cute Audio Message for You 💖</h2>
-        <button onclick="playMessage()">Play</button>
-    </div>
-    
-    <audio id="bgMusic" loop>
-        <source src="assets/hbd.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="msgAudio">
-        <source src="assets/message.mp3" type="audio/mpeg">
-    </audio>
-    
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="assets/hbd.mp3" loop></audio>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
