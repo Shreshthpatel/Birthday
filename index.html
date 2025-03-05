@@ -8,60 +8,41 @@
 </head>
 <body>
 
-    <!-- Start Screen -->
+    <!-- Start Screen (Tap to Begin) -->
     <div class="start-screen" onclick="startBirthday()">
-        Tap to Start
+        Tap to Begin
     </div>
 
-    <!-- Main Content (Hidden Initially) -->
-    <div class="hidden birthday-content">
-        
-        <!-- Photo and Typewriter Text -->
-        <div class="birthday-bg">
-            <img src="photo.jpg" class="birthday-photo" alt="Birthday">
-            <p class="typewriter" id="birthday-text">Happy Birthday Meri Jaan! 🎉🎂</p>
-        </div>
+    <!-- Birthday Content -->
+    <div class="birthday-container hidden">
+        <img src="assets/birthday-person.jpg" alt="Birthday Person" class="fade-in-photo">
+        <h1 class="typewriter">Happy Birthday Meri Jaan</h1>
+        <button class="next-button hidden" onclick="showShayari()">Next</button>
+    </div>
 
-        <!-- Cake Section -->
+    <!-- Shayari Section -->
+    <div class="shayari-section hidden">
+        <p class="typewriter">Ek pyara sa din aaya hai, jo khushiyan apne sang laaya hai!</p>
+        <button class="next-button hidden" onclick="showCake()">Next</button>
+    </div>
+
+    <!-- Cake Cutting Section -->
+    <div class="cake-section hidden">
+        <button class="light-candle" onclick="lightCandle()">Light Candle</button>
+        <button class="cut-cake hidden" onclick="cutCake()">Cut Cake</button>
+        
+        <!-- Birthday Cake -->
         <div class="birthday-cake">
             <div class="holder"></div>
             <div class="shadow"></div>
             <div class="cake">
                 <div class="chocolate"></div>
-                <div class="candle"></div>
-                <div class="flame"></div>
             </div>
+            <div class="candle"></div>
+            <div class="flame hidden"></div>
         </div>
-
-        <!-- Buttons for Interaction -->
-        <button id="light-candle" onclick="lightCandle()">Light Candle</button>
-        <button id="cut-cake" class="hidden" onclick="cutCake()">Cut Cake</button>
-        
     </div>
 
-    <!-- Background Music -->
-    <audio id="bg-music" src="music1.mp3" loop></audio>
-    <audio id="hbd-music" src="hbd.mp3"></audio>
-
-    <script>
-        function startBirthday() {
-            document.querySelector('.start-screen').classList.add('hidden');
-            document.querySelector('.birthday-content').classList.remove('hidden');
-            document.getElementById('bg-music').play();
-        }
-
-        function lightCandle() {
-            document.querySelector('.flame').style.display = 'block';
-            document.getElementById('light-candle').style.display = 'none';
-            document.getElementById('cut-cake').classList.remove('hidden');
-        }
-
-        function cutCake() {
-            document.querySelector('.flame').style.display = 'none';
-            document.getElementById('bg-music').pause();
-            document.getElementById('hbd-music').play();
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
