@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Cake</title>
+    <title>Birthday Surprise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="birthday-container">
-        <h1>🎂 Happy Birthday Meri Jaan 🎂</h1>
-        
-        <div class="birthday-cake">
-            <div class="holder"></div>
-            <div class="cake">
-                <div class="chocolate"></div>
-            </div>
-            <div class="candle"></div>
-            <div class="flame" id="flame"></div>
-        </div>
-        
-        <button id="lightCandle">Light Candle</button>
-        <button id="cutCake" disabled>Cut Cake</button>
+    <div id="startScreen" class="start-screen">
+        <p>Tap to Start</p>
     </div>
 
-    <audio id="music" src="hbd.mp3"></audio>
-    
-    <script src="script.js"></script>
+    <div id="mainContent" class="hidden">
+        <div class="birthday-bg">
+            <img src="photo.png" alt="Birthday Photo" class="birthday-photo">
+        </div>
+        <h1 id="birthdayText" class="typewriter">🎂 Happy Birthday Meri Jaan 🎂</h1>
+    </div>
+
+    <audio id="music" src="music1.mp3"></audio>
+    <script>
+        document.getElementById("startScreen").addEventListener("click", function() {
+            this.style.display = "none";
+            document.getElementById("mainContent").classList.remove("hidden");
+            document.getElementById("music").play();
+            document.body.style.backgroundImage = "url('background.jpg')";
+            document.body.style.backgroundSize = "cover";
+        });
+    </script>
 </body>
 </html>
