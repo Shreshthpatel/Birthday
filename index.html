@@ -3,35 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
+    <title>Birthday Web App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Start Screen (Tap to Begin) -->
-    <div class="start-screen" onclick="startBirthday()">
-        Tap to Begin
+    <div id="start-screen" class="screen">
+        <button id="start-button">Tap to Begin</button>
     </div>
-
-    <!-- Birthday Content -->
-    <div class="birthday-container hidden">
-        <img src="assets/birthday-person.jpg" alt="Birthday Person" class="fade-in-photo">
-        <h1 class="typewriter">Happy Birthday Meri Jaan</h1>
-        <button class="next-button hidden" onclick="showShayari()">Next</button>
+    <div id="main-screen" class="screen hidden">
+        <h1 id="birthday-message" class="hidden">Happy Birthday Meri Jan</h1>
+        <img id="photo" src="assets/birthday-person.jpg" alt="Birthday Person" class="hidden">
+        <button id="next-button" class="hidden">Next</button>
     </div>
-
-    <!-- Shayari Section -->
-    <div class="shayari-section hidden">
-        <p class="typewriter">Ek pyara sa din aaya hai, jo khushiyan apne sang laaya hai!</p>
-        <button class="next-button hidden" onclick="showCake()">Next</button>
-    </div>
-
-    <!-- Cake Cutting Section -->
-    <div class="cake-section hidden">
-        <button class="light-candle" onclick="lightCandle()">Light Candle</button>
-        <button class="cut-cake hidden" onclick="cutCake()">Cut Cake</button>
-        
-        <!-- Birthday Cake -->
+    <div id="cake-screen" class="screen hidden">
         <div class="birthday-cake">
             <div class="holder"></div>
             <div class="shadow"></div>
@@ -39,9 +23,14 @@
                 <div class="chocolate"></div>
             </div>
             <div class="candle"></div>
-            <div class="flame hidden"></div>
+            <div class="flame"></div>
         </div>
+        <div id="custom-message" class="hidden">Your custom message here!</div>
+        <button id="cute-message-button" class="hidden">A Cute Message for You</button>
     </div>
+    <audio id="bg-music" src="assets/music1.mp3" loop autoplay></audio>
+    <audio id="hbd-music" src="assets/hbd.mp3"></audio>
+    <audio id="message-audio" src="assets/message.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
