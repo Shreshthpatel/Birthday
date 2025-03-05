@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Meri Jaan</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Birthday Cake</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body onclick="startExperience()">
-    <audio id="bg-music" src="music1.mp3" loop></audio>
-    <audio id="hbd-music" src="hbd.mp3"></audio>
-    <audio id="message-audio" src="message.mp3"></audio>
+<body>
 
-    <div id="black-screen">
-        <p>Tap to Begin...</p>
-    </div>
-
-    <div id="main-content">
-        <img id="photo" src="photo.jpg" alt="Happy Birthday">
-        <p id="birthday-text"></p>
-        <button id="next1" onclick="showShayari()">Next</button>
-    </div>
-
-    <div id="shayari-section">
-        <p id="shayari-text"></p>
-        <button id="next2" onclick="showCake()">Next</button>
-    </div>
-
-    <div id="cake-section">
-        <img id="candle" src="candle.png" alt="Candle">
-        <div id="cake">
-            <div id="cake-left"></div>
-            <div id="cake-right"></div>
+    <div class="birthday-container">
+        <h1>🎂 Happy Birthday Meri Jaan 🎂</h1>
+        
+        <div class="birthday-cake">
+            <div class="holder"></div>
+            <div class="cake">
+                <div class="chocolate"></div>
+            </div>
+            <div class="candle"></div>
+            <div class="flame" id="flame"></div>
         </div>
-        <button id="light-candle-btn" onclick="lightCandle()">Light Candle</button>
-        <button id="cut-cake-btn" onclick="cutCake()">Cut Cake</button>
+        
+        <button id="lightCandle">Light Candle</button>
+        <button id="cutCake" disabled>Cut Cake</button>
     </div>
 
-    <button id="message-btn" onclick="playMessage()">Play Message</button>
-
+    <audio id="music" src="hbd.mp3"></audio>
+    
     <script src="script.js"></script>
 </body>
 </html>
