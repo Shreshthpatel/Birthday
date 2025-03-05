@@ -1,34 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
+/* General Page Styling */
 body {
-    margin: 0;
-    padding: 0;
+    background: url('assets/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: black;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
+    margin: 0;
 }
 
-#start, #content, #messageSection {
-    display: none;
+/* Center Everything */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-img {
-    max-width: 80%;
-    border-radius: 10px;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
+/* Styling for Tap to Begin */
+#tapToBegin {
+    font-size: 24px;
     cursor: pointer;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#tapToBegin:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Typewriter Effect */
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+#message {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    border-right: 2px solid white;
+    font-size: 20px;
+    width: 0;
+    animation: typewriter 3s steps(40, end) forwards;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+#photo {
+    width: 250px; /* Adjust the size */
+    border-radius: 10px; /* Optional */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+#cake {
+    width: 200px; /* Adjust size */
+}
+
+/* Buttons */
+button {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background: pink;
-    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+/* Audio Section */
+#audioSection {
+    display: none;
 }
